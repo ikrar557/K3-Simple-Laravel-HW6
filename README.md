@@ -54,7 +54,7 @@ Pada pengembangan project ini kami menggunakan software sebagai berikut:
 12. Jalankan perintah
     ```
     php artisan migrate
-    ```.
+    ```
 14. Jalankan perintah
     ```
     php artisan serve
