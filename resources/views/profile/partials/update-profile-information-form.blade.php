@@ -30,10 +30,21 @@
         </div>
 
         <div>
+            <x-input-label for="address" :value="__('Address')" />
+            <x-text-input id="address" name="address" type="text" class="mt-1 block w-full" :value="old('address', optional($user->account)->address)" required autofocus autocomplete="address" />
+            <x-input-error class="mt-2" :messages="$errors->get('address')" />
+        </div>
+
+        <div>
+            <x-input-label for="phoneNumber" :value="__('Phone Number')" />
+            <x-text-input id="phoneNumber" name="phoneNumber" type="text" class="mt-1 block w-full" :value="old('phoneNumber', optional($user->account)->phoneNumber)" required autofocus autocomplete="phoneNumber" />
+            <x-input-error class="mt-2" :messages="$errors->get('phoneNumber')" />
+        </div>
+
+        <div>
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
-
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
                 <div>
                     <p class="text-sm mt-2 text-gray-800 dark:text-gray-200">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
