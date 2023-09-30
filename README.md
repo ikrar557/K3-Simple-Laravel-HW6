@@ -7,60 +7,54 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Tentang Project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Project ini dibuat untuk memenuhi Homework Minggu ke-6 dengan tema **Web Development With PHP**, dimana peserta diminta untuk menggunakan framework Laravel. Peserta diminta juga untuk membuat website dengan ketentuan sebagi berikut:
+1. Desain web sederhana yang bisa kamu rancang dengan inspirasi desain yang sudah ada.
+2. Login, Logout, Edit Profile, menampilkan saldo.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Online Project
+Untuk memudahkan penilaian kami juga hosting project ke server kami dengan alamat:
+https://raksakabanyu.my.id
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## System Requirement
 
-## Learning Laravel
+Pada pengembangan project ini kami menggunakan software sebagai berikut:
+- Laravel 10 atau lebih tinggi.
+- PHP 8.1 atau lebih tinggi.
+- MySQL 5.6 atau lebih tinggi.
+- NodeJS 18 atau lebih tinggi.
+- Composer 2.4.1.
+- NPM 8 atau lebih tinggi.
+- Laravel Breeze.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Langkah Instalasi
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1. Download zip pada project atau menggunakan `git clone https://github.com/ikrar557/K3-Simple-Laravel-HW6.git`
+2. Buka folder project.
+3. Buka _**powershell**_ atau _**cmd**_ untuk Window, atau _**terminal(konsole)**_.
+4. Jalankan perintah `npm install` dan biarkan npm mendownload _**node_modules**_ yang dibutuhkan.
+5. Jalankan perintah `composer install` dan biarkan composer mendownload _**vendor**_ yang dibutuhkan,
+6. Kemudian _**copy paste**_ file **.env.example** menjadi **.env**, dan sesuaikan settingan pada database.
+7. Jalankan perintah `php artisan key:generate`.
+8. Jalankan perintah `php artisan migrate`.
+9. Jalankan perintah `php artisan serve`.
+10. Kemudian akses `localhost:8000`
+10. (Optional) Jika UI mengalami masalah saat di akses, maka buka terminal baru lagi dan jalankan `npm run dev` dan biarkan berjalan dilatar blakang.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Contributor (Kelompok 3)
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. Mahindra Irvan S
+2. Ikrar Bagaskara
+3. Eriyana Azhara
+4. Alya Fitri Nurhaliza
+5. Rahayu Ningrum P
+6. TanTamarine Myrna
+7. Ufairah Damara
+8. Ichsan Ainul Fikri
+9. Alpin Apriliansyah
+10. M Irfansyah
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Project Laravel ini menggunakan lisensi [MIT license](https://opensource.org/licenses/MIT).
