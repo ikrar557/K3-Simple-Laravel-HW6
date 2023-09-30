@@ -48,6 +48,20 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+        // Generate card-related information
+        $accountNumber = rand(pow(10, 9), pow(10, 10)-1);
+        $cardNumber = rand(pow(10, 11), pow(10, 12)-1);
+        $expiresAt = now()->addYears(5);
+        $balance = 10000000; // 10 million Rupiah
+
+        // Create card and associate it with the user
+        $user->card()->create([
+            'accountNumber' => $accountNumber,
+            'cardNumber' => $cardNumber,
+            'expiresAt' => $expiresAt,
+            'balance' => $balance,
+        ]);
+
         return redirect(RouteServiceProvider::HOME);
     }
 }
