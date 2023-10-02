@@ -34,6 +34,8 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'username' => ['required', 'string', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'phoneNumber' => ['required', 'string'], // Add validation for phone number
+            'address' => ['required', 'string'],
         ]);
 
         $user = User::create([
@@ -59,6 +61,12 @@ class RegisteredUserController extends Controller
             'cardNumber' => $cardNumber,
             'expiresAt' => $expiresAt,
             'balance' => $balance,
+        ]);
+
+        // Insert phone number and address into the account table
+        $user->account()->create([
+            'phoneNumber' => $request->phoneNumber,
+            'address' => $request->address,
         ]);
 
         return redirect(RouteServiceProvider::HOME);

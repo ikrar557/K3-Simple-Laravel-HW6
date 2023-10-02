@@ -50,4 +50,9 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(Card::class);
     }
 
+    public function account(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Account::class);
+    }
+
 }
