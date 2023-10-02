@@ -40,7 +40,7 @@ Pada pengembangan project ini kami menggunakan software sebagai berikut:
     ```
     npm install
     ```
-    dan biarkan npm mendownload _**node_modules**_ yang dibutuhkan.
+   dan biarkan npm mendownload _**node_modules**_ yang dibutuhkan.
 7. Jalankan perintah
    ```
    composer install
