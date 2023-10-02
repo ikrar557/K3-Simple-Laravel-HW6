@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\CardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VerificationController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +34,21 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::get('/dashboard', [CardController::class, 'index'])->name('dashboard');
+//email notification
+Route::group(['middleware' => ['auth']], function() {
+   
+    Route::get('/email/verify', [VerificationController::class, 'show'])->name('verification.notice');
+    Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify')->middleware(['signed']);
+    Route::post('/email/resend', [VerificationController::class, 'resend'])->name('verification.resend');
+    
+});
+
+Route::group(['middleware'=> ['auth']], function ()
+{
+    Route::group(['middleware'=> ['verified']], function () {
+        Route::get('/dashboard', [CardController::class, 'index'])->name('dashboard');
+    });
+});
 
 
 require __DIR__.'/auth.php';
