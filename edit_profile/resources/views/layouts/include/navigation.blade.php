@@ -1,20 +1,25 @@
 <div class="col-md-12">
-        <div class="col-md-12 dashboard">
-                <div class="navbar nav-top nav-left">
-
-                </div>
-                <div class="navbar nav-top nav-right">
-                    <ul>
-                        <li>Kelompok 3</li>
-                        <li>Home</li>
-                        <li>Logout</li>
+        <div class="dashboard">
+            <div class="dashboard-left">
+                <span class="dot"></span>
+                <p style="margin-top: 3px">Dashboard</p>
+            </div>
+            <div class="dashboard-right">
+                <div class="navbar-item dropdown">
+                    <a href="" class="nav-link dropdown-toggle" id="navbarscrollingdown" role="button" data-bs-toggle="dropdown">
+                        Kelompok 3
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarscrollingdown">
+                        <li><a href="" class="dropdown-item">Home</a></li>
+                        <li><a href="" class="dropdown-item">Logout</a></li>
                     </ul>
                 </div>
+            </div>
         </div>
-        <div class="col-md-12 title">
-                <div class="navbar nav-bottom">
-                    <h2>PROFILE</h2>
-                </div>
+        <hr class="horizontal-line">
+        <div class="profile">
+            <div class="profile-text">
+                <h4>Profile</h4>
+            </div>
         </div>
-    </div>
-</div>
+        <hr class="horizontal-line">

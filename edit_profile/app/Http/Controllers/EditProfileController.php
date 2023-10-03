@@ -8,6 +8,6 @@ class EditProfileController extends Controller
 {
     public function editprofile()
     {
-        return view('pages.editprofile');
+        return view('layouts.pages.editprofile');
     }
 }
