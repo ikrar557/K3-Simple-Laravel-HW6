@@ -16,8 +16,8 @@
         <div class="mt-4 relative">
             <x-input-label for="password" :value="__('Password')" />
             <div class="relative">
-              <input type="password" id="password" class="rounded border-gray-300 shadow-sm mt-1 block w-full"
-                     placeholder="{{ __('Enter your password') }}" required>
+              <x-text-input name="password" type="password" id="password" class="mt-1 block w-full"
+                     placeholder="{{ __('Enter your password') }}" required autocomplete="current-password"/>
               <button type="button" class="eye-icon" onclick="togglePassword()">
                 <span></span>
               </button>
