@@ -1,3 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.eye-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    right: 1px;
+    z-index: 10;
+    cursor: pointer;
+    border-left: 1px solid #dddddd;
+  }
+  
+  .eye-icon span {
+    position: relative;
+    width: 10px;
+    height: 5px;
+    background: transparent;
+    border-top: 2px solid #c2c2c2;
+    transform: rotate(45deg);
+    border-radius: 4px;
+    border: 2px solid;
+    border-color: #c2c2c2 #c2c2c2 transparent transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .eye-icon span:after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: #c2c2c2;
+    border-radius: 50%;
+    left: 3px;
+    top: -1px;
+  }
+  
+  .eye-icon.open span {
+    transform: rotate(45deg) translate(4px, -6px);
+    border-color: transparent transparent #c2c2c2 #c2c2c2;
+  }  

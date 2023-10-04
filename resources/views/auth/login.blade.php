@@ -13,14 +13,15 @@
         </div>
 
         <!-- Password -->
-        <div class="mt-4">
+        <div class="mt-4 relative">
             <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
+            <div class="relative">
+              <input type="password" id="password" class="rounded border-gray-300 shadow-sm mt-1 block w-full"
+                     placeholder="{{ __('Enter your password') }}" required>
+              <button type="button" class="eye-icon" onclick="togglePassword()">
+                <span></span>
+              </button>
+            </div>
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
@@ -33,15 +34,30 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
+            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
+            href="{{ route('register') }}">
+                    {{ __('Don\'t have an account?') }}
                 </a>
-            @endif
 
             <x-primary-button class="ml-3">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
     </form>
+
+    <!-- Show/Hide Password JavaScript -->
+    <script>
+        function togglePassword() {
+            var passwordInput = document.getElementById("password");
+            var buttonEl = document.querySelector('.eye-icon');
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                buttonEl.classList.add('open');
+            } else {
+                passwordInput.type = "password";
+                buttonEl.classList.remove('open');
+            }
+        }
+    </script>
 </x-guest-layout>
