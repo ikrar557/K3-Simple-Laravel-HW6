@@ -53,14 +53,26 @@ jobs:
           script: |
             whoami
             export IMAGE_VER=${{ github.run_number }}
+
+            # Check directory
+            if [ -d "laratm" ]; then
+              echo "Deleting existing directory: laratm"
+              rm -rf "laratm"
+            fi
+
+            # Create directory
             mkdir -p ~/laratm
             cd ~/laratm
+
+            # Clone the project
             git clone -b balance-feature https://github.com/ikrar557/K3-Simple-Laravel-HW6.git  .
             if ! git show-ref --quiet refs/heads/balance-feature; then
               git checkout -b balance-feature
             else
               git checkout balance-feature
             fi
+
+            # Build the image run the image
             docker-compose build
             docker-compose up -d
 

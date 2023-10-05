@@ -1,6 +1,8 @@
 # Use the official Nginx image
 FROM nginx:latest
 
+RUN apt-get update && apt-get install -y nginx-full
+
 # Remove the default Nginx configuration
 RUN rm /etc/nginx/conf.d/default.conf
 

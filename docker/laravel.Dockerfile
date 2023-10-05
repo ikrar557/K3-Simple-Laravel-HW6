@@ -33,6 +33,9 @@ RUN npm install -g npm@10
 # Install composer dependencies
 RUN composer install --no-interaction
 
+# Install node dependencies
+RUN npm install
+RUN npm run build
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
