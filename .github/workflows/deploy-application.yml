@@ -55,7 +55,7 @@ jobs:
             export IMAGE_VER=${{ github.run_number }}
             mkdir -p ~/laratm
             cd ~/laratm
-            git clone https://github.com/ikrar557/K3-Simple-Laravel-HW6.git .
+            git clone https://github.com/ikrar557/K3-Simple-Laravel-HW6.git
             git checkout -b balance-feature
             docker-compose build
             docker-compose up -d
