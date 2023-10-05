@@ -5,7 +5,7 @@ FROM nginx:latest
 RUN rm /etc/nginx/conf.d/default.conf
 
 # Copy your Nginx configuration file
-COPY nginx/nginx.conf /etc/nginx/conf.d/
+ADD docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 
 # Set working directory
 WORKDIR /var/www/html
