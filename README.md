@@ -30,30 +30,45 @@ Pada pengembangan project ini kami menggunakan software sebagai berikut:
 
 ## Langkah Instalasi
 
-1. Download zip pada project atau menggunakan `git clone https://github.com/ikrar557/K3-Simple-Laravel-HW6.git`
-2. Buka folder project.
-3. Buka _**powershell**_ atau _**cmd**_ untuk Window, atau _**terminal(konsole)**_.
-4. Jalankan perintah `npm install` dan biarkan npm mendownload _**node_modules**_ yang dibutuhkan.
-5. Jalankan perintah `composer install` dan biarkan composer mendownload _**vendor**_ yang dibutuhkan,
-6. Kemudian _**copy paste**_ file **.env.example** menjadi **.env**, dan sesuaikan settingan pada database.
-7. Jalankan perintah `php artisan key:generate`.
-8. Jalankan perintah `php artisan migrate`.
-9. Jalankan perintah `php artisan serve`.
-10. Kemudian akses `localhost:8000`
-10. (Optional) Jika UI mengalami masalah saat di akses, maka buka terminal baru lagi dan jalankan `npm run dev` dan biarkan berjalan dilatar blakang.
+1. Download zip pada project atau menggunakan
+   ```
+   git clone https://github.com/ikrar557/K3-Simple-Laravel-HW6.git
+   ```
+3. Buka folder project.
+4. Buka _**powershell**_ atau _**cmd**_ untuk Window, atau _**terminal(konsole)**_.
+5. Jalankan perintah
+    ```
+    npm install
+    ```
+   dan biarkan npm mendownload _**node_modules**_ yang dibutuhkan.
+7. Jalankan perintah
+   ```
+   composer install
+   ```
+   dan biarkan composer mendownload _**vendor**_ yang dibutuhkan,
+9. Kemudian _**copy paste**_ file **.env.example** menjadi **.env**, dan sesuaikan settingan pada database.
+10. Jalankan perintah
+    ```
+    php artisan key:generate
+    ```
+12. Jalankan perintah
+    ```
+    php artisan migrate
+    ```
+14. Jalankan perintah
+    ```
+    php artisan serve
+    ```
+16. Kemudian akses
+    ```
+    localhost:8000
+    ```
+10. (Optional) Jika UI mengalami masalah saat di akses, maka buka terminal baru lagi dan jalankan
+    ```
+    npm run dev
+    ```
+    dan biarkan berjalan dilatar blakang.
 
-## Contributor (Kelompok 3)
-
-1. Mahindra Irvan S
-2. Ikrar Bagaskara
-3. Eriyana Azhara
-4. Alya Fitri Nurhaliza
-5. Rahayu Ningrum P
-6. TanTamarine Myrna
-7. Ufairah Damara
-8. Ichsan Ainul Fikri
-9. Alpin Apriliansyah
-10. M Irfansyah
 
 ## License
 
