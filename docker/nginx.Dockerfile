@@ -2,7 +2,6 @@
 FROM nginxproxymanager/nginx-full
 
 # Remove the default Nginx configuration
-RUN rm /etc/nginx/conf.d/default.conf
 
 # Copy your Nginx configuration file
 ADD docker/nginx/default.conf /etc/nginx/conf.d/default.conf
