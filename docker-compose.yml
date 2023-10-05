@@ -11,8 +11,8 @@ services:
       - laratm-net
 
   nginx:
-    image: clean557/laratm-nginx:${IMAGE_VER}
-    container_name: nginx
+    image: clean557/laratm-apache2:${IMAGE_VER}
+    container_name: apache2
     restart: unless-stopped
     tty: true
     ports:
