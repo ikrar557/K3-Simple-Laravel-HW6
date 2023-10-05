@@ -34,7 +34,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./Docker/dockerfile/nginx.Dockerfile
+          file: ./docker/nginx.Dockerfile
           push: true
           tags: clean557/laratm-nginx:${{ github.run_number }}
 
