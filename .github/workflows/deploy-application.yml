@@ -53,7 +53,10 @@ jobs:
           script: |
             whoami
             export IMAGE_VER=${{ github.run_number }}
-            cd ~/app/laratm && git checkout -b balance-feature
-            git pull origin balance-feature
-            docker compose build
-            docker compose up -d
+            mkdir -p ~/laratm
+            cd ~/laratm
+            git clone https://github.com/ikrar557/K3-Simple-Laravel-HW6.git .
+            git checkout -b balance-feature
+            docker-compose build
+            docker-compose up -d
+
