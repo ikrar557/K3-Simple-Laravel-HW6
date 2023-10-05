@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     tty: true
     volumes:
-      - .env:/var/www/.env
+      - .env:/var/www/html.env
     networks:
       - laratm-net
 
