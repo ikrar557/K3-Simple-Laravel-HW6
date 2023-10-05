@@ -19,7 +19,10 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
     && apt-get install -y nodejs
 
 # Install Composer 2
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=2.4
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+
+COPY --chown=www-data:www-data . /var/www/
+RUN chown -R www-data:www-data /var/www
 
 # Copy project files
 COPY . /var/www/html
@@ -29,6 +32,7 @@ RUN npm install -g npm@10
 
 # Install composer dependencies
 RUN composer install --no-interaction
+
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
