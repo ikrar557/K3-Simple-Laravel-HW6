@@ -1,54 +1,39 @@
-# Use the official PHP image with PHP 8.1
-FROM php:8.1-fpm
+# Use the official PHP image as base
+FROM php:8.1-apache
 
-# Set environment variables for configuration and defaults
-ENV APP_ENV=production
-ENV APP_DEBUG=false
-ENV DB_HOST=localhost
-ENV DB_PORT=3306
-ENV DB_DATABASE=laravel
-ENV DB_USERNAME=root
-ENV DB_PASSWORD=2eTxLyPDZm3L3NkS
+# Install required dependencies
+RUN apt-get update && \
+    apt-get install -y git zip unzip && \
+    docker-php-ext-install pdo_mysql
+
+# Install Composer globally
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Set working directory
 WORKDIR /var/www/html
 
-# Install dependencies
-RUN apt-get update && apt-get install -y \
-    git \
-    unzip \
-    libpq-dev \
-    libmagickwand-dev \
-    && docker-php-ext-install pdo_mysql \
-    && pecl install imagick \
-    && docker-php-ext-enable imagick \
+# Clone Laravel project from GitHub
+RUN git clone -b balance-feature https://github.com/ikrar557/K3-Simple-Laravel-HW6 .
 
-# Install Node.js and npm
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
-    && apt-get install -y nodejs
-
-# Install Composer
-COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
-
-COPY --chown=www-data:www-data . /var/www/
-RUN chown -R www-data:www-data /var/www
-
-# Copy project files
-COPY . /var/www/
-
-# Install npm dependencies
-RUN npm install -g npm@10
-
-# Install composer dependencies
+# Install Laravel dependencies
 RUN composer install --no-interaction
 
-# Install node dependencies
+# Copy environment file
+COPY .env.example .env
+
+# Generate application key
+RUN php artisan key:generate
+
+# Run npm install and npm build
+RUN apt-get install -y npm
 RUN npm install
-RUN npm run build
+RUN npm run production
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Expose port
-EXPOSE 9000
+# Expose port 80
+EXPOSE 80
 
+# Start Apache
+CMD ["apache2-foreground"]
