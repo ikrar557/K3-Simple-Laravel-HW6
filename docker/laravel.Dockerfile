@@ -27,7 +27,7 @@ RUN php artisan key:generate
 # Run npm install and npm build
 RUN apt-get install -y npm
 RUN npm install
-RUN npm run production
+RUN npm run build
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
